@@ -8,6 +8,9 @@ class Api::V1::LinksController < ApiController
     end
   end
 
+  def index
+    render json: Link.top_ten
+  end
   private
     def link_params
       params.require(:link).permit(:url)
