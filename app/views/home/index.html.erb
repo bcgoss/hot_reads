@@ -1,6 +1,15 @@
 <h1>Hot Reads!</h1>
-<ul>
-<% @links.each_with_index do |link, index| %>
-  <li><%= index %> <%= link_to link.url %></li>
-<% end %>
-</ul>
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Link</th>
+    <th>Reads</th>
+  </tr>
+  <% @links.each_with_index do |link, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= link_to link.url %></td>
+      <td><%= link.url_count %></td>
+    </tr>
+  <% end %>
+</table>
